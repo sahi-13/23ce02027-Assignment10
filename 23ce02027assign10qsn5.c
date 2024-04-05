@@ -18,10 +18,20 @@ int main()
       union empdetails u;
     };
     struct employee e1;
-    e1.id=1;
-    strcpy(e1.name,"sahithi");
-    e1.py=salary;
-    e1.u.sal=15550.34;
+    printf("enter id:");
+    scanf("%d",&e1.id);
+    printf("enter name:");
+    scanf("%s",&e1.name);
+    printf("enter paytype:");
+    scanf("%d",(int*)&e1.py);
+   if(e1.py==salary){
+    printf("enter salary:");
+    scanf("%lf",&e1.u.sal);
+    }
+    if(e1.py==hourly){
+        printf("enter wage:");
+        scanf("%f",&e1.u.wage);}
+
     printf("id:%d\n",e1.id);
     printf("name:%s\n",e1.name);
     if(e1.py==hourly)
@@ -32,6 +42,6 @@ int main()
 if(e1.py==salary)
 {
     printf("paytype is salary\n");
-    printf("salary is :%f\n",e1.u.sal);
+    printf("salary is :%lf\n",e1.u.sal);
 }
 }
